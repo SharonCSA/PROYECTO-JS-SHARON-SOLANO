@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  background: linear-gradient(#633030, white); }
+
+.bienvenida img {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 20%;
+  border: 2px solid #c74d4d; }
