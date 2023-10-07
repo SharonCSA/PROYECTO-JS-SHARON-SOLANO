@@ -19,7 +19,7 @@ function calcularTotalCompra(productos) {
 let nombre = prompt("Hola, para continuar escribe aquí tu nombre y apellido:");
 alert("¡Hola, " + nombre + "! Bienvenido a nuestra tienda virtual.✨");
 
-let productos = []; // Array para almacenar los productos
+let productos = []; // Array
 
 while (true) {
   let nombreProducto = prompt("¿Cuál es el nombre del producto?");
@@ -45,7 +45,7 @@ for (let i = 0; i < productos.length; i++) {
 let medioDePago = prompt("¿Cuál será tu medio de pago? (Escribe 'efectivo' o 'tarjeta')").toLowerCase();
 
 if (medioDePago === 'efectivo') {
-  let descuento = totalCompra * 0.10; // Calcula el 10% de descuento
+  let descuento = totalCompra * 0.10; // Descuento de 10% para compra en efectivo
   totalCompra -= descuento; // Resta el descuento al total
   alert("¡Enhorabuena por pagar en efectivo! Obtienes un 10% de descuento. Tu total con descuento es: $" + totalCompra.toFixed(2));
 } else if (medioDePago === 'tarjeta') {
