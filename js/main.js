@@ -1,58 +1,69 @@
-function obtenerValorProducto() {
-  let valorProducto = parseFloat(prompt("¿Cuál es el precio del producto que deseas comprar?"));
-  if (!isNaN(valorProducto) && valorProducto > 0) {
-    return valorProducto;
-  } else {
-    alert("Por favor, ingresa un valor numérico válido para el producto.");
-    return obtenerValorProducto();
-  }
+const nombreApellidoInput = document.getElementById("nombreApellido");
+const nombreProductoInput = document.getElementById("nombreProducto");
+const precioProductoInput = document.getElementById("precioProducto");
+const listaProductos = document.getElementById("listaProductos");
+const totalCompra = document.getElementById("totalCompra");
+const medioPagoSelect = document.getElementById("medioPago");
+const agregarProductoButton = document.getElementById("agregarProducto");
+const realizarCompraButton = document.getElementById("realizarCompra");
+const mensajeCompra = document.getElementById("mensajeCompra");
+
+// Array productos
+const productos = [];
+
+// Agrega productos al hacer clic en el botón "Agregar Producto"
+agregarProductoButton.addEventListener("click", function() {
+    // Obtiene los datos del producto
+    const nombreProducto = nombreProductoInput.value;
+    const precioProducto = parseFloat(precioProductoInput.value);
+
+    if (nombreProducto && !isNaN(precioProducto) && precioProducto > 0) {
+        // Agrega el producto al array
+        productos.push({ nombre: nombreProducto, precio: precioProducto });
+
+        // Crea un elemento y agrega a la lista de productos
+        const listItem = document.createElement("li");
+        listItem.textContent = `${nombreProducto} - $${precioProducto.toFixed(2)}`;
+        listaProductos.appendChild(listItem);
+
+        // Actualiza el total de la compra
+        actualizarTotalCompra();
+    } else {
+        alert("Por favor, ingresa un nombre de producto y un valor numérico válido para el precio.");
+    }
+
+    // Limpia los campos de entrada
+    nombreProductoInput.value = "";
+    precioProductoInput.value = "";
+});
+
+// Actualiza el total de la compra
+function actualizarTotalCompra() {
+    let total = 0;
+    for (const producto of productos) {
+        total += producto.precio;
+    }
+    totalCompra.textContent = total.toFixed(2);
 }
 
-function calcularTotalCompra(productos) {
-  let totalCompra = 0;
-  for (let i = 0; i < productos.length; i++) {
-    totalCompra += productos[i].precio;
-  }
-  return totalCompra;
-}
+// Se realiza la compra al hacer clic en el botón "Realizar Compra"
+realizarCompraButton.addEventListener("click", function() {
+    const medioPago = medioPagoSelect.value;
+    const nombreUsuario = nombreApellidoInput.value;
 
-let nombre = prompt("Hola, para continuar escribe aquí tu nombre y apellido:");
-alert("¡Hola, " + nombre + "! Bienvenido a nuestra tienda virtual.✨");
+    let mensaje = "";
 
-let productos = []; // Array
+    if (medioPago === 'efectivo') {
+        const descuento = parseFloat(totalCompra.textContent) * 0.10;
+        const totalConDescuento = parseFloat(totalCompra.textContent) - descuento;
+        mensaje = `¡Enhorabuena ${nombreUsuario} por pagar en efectivo! Obtienes un 10% de descuento. Tu total con descuento es: $${totalConDescuento.toFixed(2)}`;
+    } else if (medioPago === 'tarjeta') {
+        mensaje = `¡Enhorabuena, ${nombreUsuario}, tu compra ha sido realizada!. Tu total es: $${totalCompra.textContent}`;
+    } else {
+        mensaje = `Medio de pago no reconocido. Tu total es: $${totalCompra.textContent}`;
+    }
 
-while (true) {
-  let nombreProducto = prompt("¿Cuál es el nombre del producto?");
-  let precioProducto = obtenerValorProducto();
-
-  productos.push({ nombre: nombreProducto, precio: precioProducto });
-
-  let deseaAgregarMas = prompt("¿Deseas añadir otro producto a tu compra? (Escribe 'si' o 'no')").toLowerCase();
-
-  if (deseaAgregarMas !== 'si') {
-    break;
-  }
-}
-
-let totalCompra = calcularTotalCompra(productos);
-
-alert("Tus productos seleccionados son:");
-
-for (let i = 0; i < productos.length; i++) {
-  alert(productos[i].nombre + " - $" + productos[i].precio.toFixed(2));
-}
-
-let medioDePago = prompt("¿Cuál será tu medio de pago? (Escribe 'efectivo' o 'tarjeta')").toLowerCase();
-
-if (medioDePago === 'efectivo') {
-  let descuento = totalCompra * 0.10; // Descuento de 10% para compra en efectivo
-  totalCompra -= descuento; // Resta el descuento al total
-  alert("¡Enhorabuena por pagar en efectivo! Obtienes un 10% de descuento. Tu total con descuento es: $" + totalCompra.toFixed(2));
-} else if (medioDePago === 'tarjeta') {
-  alert("No obtienes ningún descuento. Tu total es: $" + totalCompra.toFixed(2));
-} else {
-  alert("Medio de pago no reconocido. Tu total es: $" + totalCompra.toFixed(2));
-}
-
-alert("Tu compra ha sido realizada. ¡Gracias por visitarnos, te esperamos nuevamente! 🤗");
+    // Mostrar el mensaje en el elemento con id "mensajeCompra"
+    mensajeCompra.textContent = mensaje;
+});
 

@@ -4,10 +4,25 @@
   box-sizing: border-box; }
 
 body {
-  background: linear-gradient(#633030, white); }
+  background: linear-gradient(#ff9354, white);
+  background-repeat: no-repeat;
+  padding: 20px;
+  padding-left: 50px; }
 
-.bienvenida img {
+.bienvenida {
   width: 100%;
-  max-width: 200px;
-  border-radius: 20%;
-  border: 2px solid #c74d4d; }
+  max-width: 100px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px; }
+  .bienvenida img {
+    width: 100%;
+    border-radius: 20%;
+    border: 2px solid #c74d4d; }
+
+.productos li {
+  list-style: none; }
+  .productos li img {
+    width: 100%;
+    max-width: 80px;
+    border-radius: 20%; }

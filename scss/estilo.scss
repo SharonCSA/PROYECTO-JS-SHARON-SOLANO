@@ -4,13 +4,28 @@
     box-sizing: border-box;
 }
 body{
-    background: linear-gradient(rgb(99, 48, 48), white);
+    background: linear-gradient(rgb(255, 147, 84), white);
+    background-repeat: no-repeat;
+    padding: 20px;
+    padding-left: 50px;
 }
 .bienvenida{
+    width: 100%;
+    max-width: 100px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
     img{
         width: 100%;
-        max-width: 200px;
         border-radius: 20%;
         border: 2px solid rgb(199, 77, 77);
     }
 }
+.productos li{
+    list-style: none;
+    img{
+        width: 100%;
+        max-width: 80px;
+        border-radius: 20%;
+    }
+} 
