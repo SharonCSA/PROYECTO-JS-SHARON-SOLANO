@@ -9,7 +9,14 @@ const realizarCompraButton = document.getElementById("realizarCompra");
 const mensajeCompra = document.getElementById("mensajeCompra");
 
 // Array productos
-const productos = [];
+let productos = [];
+
+// Verifica si hay datos guardados en Local Storage y los carga
+if (localStorage.getItem("productos")) {
+    productos = JSON.parse(localStorage.getItem("productos"));
+    actualizarListaProductos();
+    actualizarTotalCompra();
+}
 
 // Agrega productos al hacer clic en el botón "Agregar Producto"
 agregarProductoButton.addEventListener("click", function() {
@@ -21,12 +28,11 @@ agregarProductoButton.addEventListener("click", function() {
         // Agrega el producto al array
         productos.push({ nombre: nombreProducto, precio: precioProducto });
 
-        // Crea un elemento y agrega a la lista de productos
-        const listItem = document.createElement("li");
-        listItem.textContent = `${nombreProducto} - $${precioProducto.toFixed(2)}`;
-        listaProductos.appendChild(listItem);
+        // Guarda los productos en Local Storage
+        localStorage.setItem("productos", JSON.stringify(productos));
 
-        // Actualiza el total de la compra
+        // Actualiza la lista de productos y el total de la compra
+        actualizarListaProductos();
         actualizarTotalCompra();
     } else {
         alert("Por favor, ingresa un nombre de producto y un valor numérico válido para el precio.");
@@ -36,6 +42,16 @@ agregarProductoButton.addEventListener("click", function() {
     nombreProductoInput.value = "";
     precioProductoInput.value = "";
 });
+
+// Actualiza la lista de productos en la página
+function actualizarListaProductos() {
+    listaProductos.innerHTML = "";
+    for (const producto of productos) {
+        const listItem = document.createElement("li");
+        listItem.textContent = `${producto.nombre} - $${producto.precio.toFixed(2)}`;
+        listaProductos.appendChild(listItem);
+    }
+}
 
 // Actualiza el total de la compra
 function actualizarTotalCompra() {
