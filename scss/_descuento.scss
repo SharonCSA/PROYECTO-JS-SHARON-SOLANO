@@ -1,0 +1,29 @@
+main{
+    .header_des{
+        box-shadow: $sombra;
+        .textos{
+            color: $color_textos;
+        }
+        .link_descuentos{
+            color: $outline;
+            &:hover{
+                color: $resaltador;
+            }
+        }
+    }
+    .sale{
+        background:  linear-gradient(to top,  rgb(255, 159, 95), white);
+        border: 3px solid rgb(255, 60, 0);
+        box-shadow: $sombra;
+        transition: transform 0.2s ease-in;
+        &:hover{
+            border: 3px solid rgb(255, 251, 250);
+            transform: scale(1.1, 1.1);
+        }
+        .joyas{
+            object-fit: cover;
+            height: 350px;
+            width: 100%
+        }
+    }
+}

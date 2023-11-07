@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: linear-gradient(to top,  rgb(231, 170, 128), white,  rgb(252, 191, 150));
+}
+header{
+    .navegador{
+        font-family: $font1;
+        .logo{
+            width: 165px;
+            margin-left: 20px;
+        }
+        .boton_inicio{
+            background-color: rgb(255, 139, 86);
+            border-radius: 10%;
+            text-decoration: none;
+            color: white;
+        }
+        a {
+            color: $color_textos;
+            font-size: 20px;
+            &:not(.logo) {
+              &:hover {
+                background-color: rgb(255, 212, 184);
+                border-radius: 10%;
+                color: black;
+              }
+            }
+          }
+        .boton_carrito{
+            border-color:  $outline;
+            color:  $outline;
+        }
+    }
+}
+main{
+    font-family: $font2;
+    .divider{
+        border-top: 3px solid white;
+    }
+}
+
+.piedepagina{
+    padding: 10px;
+    font-family: $font3;
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: 400px 400px;
+    grid-template-rows: 0.3fr 0.3fr 0.3fr;
+    gap: 2px;
+    grid-template-areas: 
+        "nombre volver"
+        "correo redes"
+        "derechos derechos";
+        place-content: center;
+    .nombre{
+        grid-area: nombre;
+    }
+    .correo{
+        grid-area: correo;
+        a{
+            text-decoration: none;
+            color: brown;
+            &:hover{
+                color: $resaltador;
+            }
+        }
+    }
+    .derechos{
+        grid-area: derechos;
+        text-align: center;
+    }
+    .redes{
+        grid-area: redes;
+        p{
+            color: $color_textos;
+        }
+    }
+    .volver{
+        grid-area: volver;
+        text-align: end;
+        color: $color_textos;
+    }
+    .icons{
+        color: $color_textos;
+        text-decoration: none;
+        margin: 0 10px;
+        &:hover{
+            color: $resaltador;
+        }
+    }
+
+}

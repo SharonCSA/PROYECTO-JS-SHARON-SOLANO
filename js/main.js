@@ -1,85 +1,59 @@
-const nombreApellidoInput = document.getElementById("nombreApellido");
-const nombreProductoInput = document.getElementById("nombreProducto");
-const precioProductoInput = document.getElementById("precioProducto");
-const listaProductos = document.getElementById("listaProductos");
-const totalCompra = document.getElementById("totalCompra");
-const medioPagoSelect = document.getElementById("medioPago");
-const agregarProductoButton = document.getElementById("agregarProducto");
-const realizarCompraButton = document.getElementById("realizarCompra");
-const mensajeCompra = document.getElementById("mensajeCompra");
+// Inicializa el carrito como un objeto vacío
+const carrito = {
+  productos: [],
+  total: 0,
+};
 
-// Array productos
-let productos = [];
-
-// Verifica si hay datos guardados en Local Storage y los carga
-if (localStorage.getItem("productos")) {
-    productos = JSON.parse(localStorage.getItem("productos"));
-    actualizarListaProductos();
-    actualizarTotalCompra();
+// Función para actualizar el contador del carrito
+function actualizarContadorCarrito() {
+  document.getElementById('cart-count').textContent = carrito.productos.length;
 }
 
-// Agrega productos al hacer clic en el botón "Agregar Producto"
-agregarProductoButton.addEventListener("click", function() {
-    // Obtiene los datos del producto
-    const nombreProducto = nombreProductoInput.value;
-    const precioProducto = parseFloat(precioProductoInput.value);
+// Función para agregar un producto al carrito
+function agregarProductoAlCarrito(nombre, precio) {
+  const producto = {
+    nombre: nombre,
+    precio: precio,
+  };
+  carrito.productos.push(producto);
+  carrito.total += precio;
 
-    if (nombreProducto && !isNaN(precioProducto) && precioProducto > 0) {
-        // Agrega el producto al array
-        productos.push({ nombre: nombreProducto, precio: precioProducto });
+  // Actualiza el contador del carrito
+  actualizarContadorCarrito();
+}
 
-        // Guarda los productos en Local Storage
-        localStorage.setItem("productos", JSON.stringify(productos));
+// Evento al hacer clic en el botón "Comprar"
+const botonesComprar = document.querySelectorAll('.boton');
+botonesComprar.forEach((boton) => {
+  boton.addEventListener('click', (e) => {
+    const productoNombre = e.target.getAttribute('data-product-name');
+    const productoPrecio = parseFloat(e.target.getAttribute('data-product-price'));
 
-        // Actualiza la lista de productos y el total de la compra
-        actualizarListaProductos();
-        actualizarTotalCompra();
-    } else {
-        alert("Por favor, ingresa un nombre de producto y un valor numérico válido para el precio.");
-    }
+    // Agregar el producto al carrito
+    agregarProductoAlCarrito(productoNombre, productoPrecio);
 
-    // Limpia los campos de entrada
-    nombreProductoInput.value = "";
-    precioProductoInput.value = "";
+    // Muestra una alerta indicando que se ha agregado al carrito
+    Swal.fire('Producto Agregado', `Has agregado ${productoNombre} al carrito por $${productoPrecio}.`, 'success');
+  });
 });
 
-// Actualiza la lista de productos en la página
-function actualizarListaProductos() {
-    listaProductos.innerHTML = "";
-    for (const producto of productos) {
-        const listItem = document.createElement("li");
-        listItem.textContent = `${producto.nombre} - $${producto.precio.toFixed(2)}`;
-        listaProductos.appendChild(listItem);
-    }
+// Función para abrir el carrito en una ventana emergente
+function abrirCarrito() {
+  let carritoHTML = '<ul>';
+  for (const producto of carrito.productos) {
+    carritoHTML += `<li>${producto.nombre} - $${producto.precio.toFixed(2)}</li>`;
+  }
+  carritoHTML += `</ul><p>Total: $${carrito.total.toFixed(2)}</p>`;
+
+  Swal.fire({
+    title: 'Carrito de Compras',
+    html: carritoHTML,
+    showCancelButton: true,
+  });
 }
 
-// Actualiza el total de la compra
-function actualizarTotalCompra() {
-    let total = 0;
-    for (const producto of productos) {
-        total += producto.precio;
-    }
-    totalCompra.textContent = total.toFixed(2);
-}
-
-// Se realiza la compra al hacer clic en el botón "Realizar Compra"
-realizarCompraButton.addEventListener("click", function() {
-    const medioPago = medioPagoSelect.value;
-    const nombreUsuario = nombreApellidoInput.value;
-
-    let mensaje = "";
-
-    if (medioPago === 'efectivo') {
-        const descuento = parseFloat(totalCompra.textContent) * 0.10;
-        const totalConDescuento = parseFloat(totalCompra.textContent) - descuento;
-        mensaje = `¡Enhorabuena ${nombreUsuario} por pagar en efectivo! Obtienes un 10% de descuento. Tu total con descuento es: $${totalConDescuento.toFixed(2)}`;
-    } else if (medioPago === 'tarjeta') {
-        mensaje = `¡Enhorabuena, ${nombreUsuario}, tu compra ha sido realizada!. Tu total es: $${totalCompra.textContent}`;
-    } else {
-        mensaje = `Medio de pago no reconocido. Tu total es: $${totalCompra.textContent}`;
-    }
-
-    // Mostrar el mensaje en el elemento con id "mensajeCompra"
-    mensajeCompra.textContent = mensaje;
+// Evento al hacer clic en el botón del carrito en el header
+const botonAbrirCarrito = document.getElementById('open-cart-button');
+botonAbrirCarrito.addEventListener('click', () => {
+  abrirCarrito();
 });
-

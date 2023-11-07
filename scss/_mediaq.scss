@@ -1,0 +1,52 @@
+/* Estilos para pantallas más pequeñas (mobile) */
+@media (max-width: 768px) {
+    .navegador{
+        background-color:  rgb(255, 180, 130);
+        .logo{
+            max-width: 130px;
+            width: 100%;
+        }
+    }
+    /*index*/
+    .productos-seccion{
+        flex-direction: column;
+        .productos-contenido{
+            flex-direction: column;
+            margin: 5px;
+            border-radius: 2.5%;
+            h4{
+                font-size: 5px;
+            }
+        }
+    }
+    .atractivos{
+        font-size: 18px;
+    }
+    /*ubicanos*/
+    #fondodemapa{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 10px;
+        grid-template-areas:
+            "direccion"
+            "mapa"
+            "contacto";
+    }
+    /*footer*/
+    .piedepagina{
+        grid-template-columns: 1fr 1fr;
+        height: auto;
+        .icons {
+            margin: 5px; /* Reduce el margen entre los íconos */
+            font-size: 18px;
+        }
+        .volver {
+            font-size: 14px;
+        }
+        .psocial {
+            font-size: 14px; 
+        }
+    }
+
+}

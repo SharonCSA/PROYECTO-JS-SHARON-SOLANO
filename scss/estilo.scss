@@ -1,31 +1,28 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body{
-    background: linear-gradient(rgb(255, 147, 84), white);
-    background-repeat: no-repeat;
-    padding: 20px;
-    padding-left: 50px;
-}
-.bienvenida{
-    width: 100%;
-    max-width: 100px;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    img{
-        width: 100%;
-        border-radius: 20%;
-        border: 2px solid rgb(199, 77, 77);
+@import "variables";
+
+@import "global";
+
+@import "paginicio";
+
+@import "catalogo";
+
+@import "descuento";
+
+@import "mediaQ";
+
+@mixin boton-estilo($bg-color, $text-color) {
+    background-color: $bg-color;
+    color: $text-color;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: solid 2px $outline;
+    cursor: pointer;
+    
+    &:hover {
+      background-color: darken(rgb(248, 148, 81), 10%);
     }
-}
-.productos li{
-    list-style: none;
-    img{
-        width: 100%;
-        max-width: 80px;
-        border-radius: 20%;
-    }
-} 
+  }
+  
+.boton {
+    @include boton-estilo(rgb(250, 192, 154), rgb(104, 53, 12));
+  }
