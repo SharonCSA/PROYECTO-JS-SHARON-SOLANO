@@ -22,7 +22,7 @@ function agregarProductoAlCarrito(nombre, precio) {
   actualizarContadorCarrito();
 }
 
-// Evento al hacer clic en el botón "Comprar"
+// Evento al hacer clic en el botón "Añadir al carrito"
 const botonesComprar = document.querySelectorAll('.boton');
 botonesComprar.forEach((boton) => {
   boton.addEventListener('click', (e) => {

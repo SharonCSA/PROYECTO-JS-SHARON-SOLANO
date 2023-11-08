@@ -18,7 +18,7 @@
 </head>
 <body>
     <header id="up">
-        <nav class=" navegador navbar navbar-expand-lg rounded" aria-label="Thirteenth navbar example">
+        <nav class=" navegador navbar navbar-expand-lg rounded fixed-top" aria-label="Thirteenth navbar example">
           <div class="container-fluid">
             <a class="logo navbar-brand" href="../index.html"><img class="logo" src="../assets/img/logo.png" alt="Logo de Hathor"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,7 +38,7 @@
                   <a class="nav-link" aria-current="page" href="catalogo.html">Catalogo</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" aria-current="true" href="./descuentos.html" >SALE OFF%</a>
+                  <a class="nav-link" aria-current="true" href="#descuentazos" >SALE OFF%</a>
                 </li>
               </ul>
               <div class="d-lg-flex col-lg-3 justify-content-lg-end">
@@ -47,20 +47,20 @@
                       <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
                     </svg>
                     <span id="cart-count" class="badge bg-secondary">0</span>
-                  </a>
+                </a>
               </div>
             </div>
           </div>
         </nav>
-      </header>
+    </header>
     <main>
-        <section class="header_cat position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center">
+        <section class="header_cat position-relative overflow-hidden p-3 p-md-5 text-center">
             <div class="col-md-6 p-lg-3 mx-auto">
                 <h1 class="textos display-3 fw-bold">Bienvenido a nuestro catálogo</h1>
                 <h3 class="textos fw-normal text-muted mb-3">En este espacio podrás encontrar todos los productos que tenemos disponible en joyería y accesorios.</h3>
                 <div class="d-flex gap-3 justify-content-center lead fw-normal">
-                    <a class="link_descuentos icon-link text-decoration-none" href="./descuentos.html">
-                        Haz click aquí para mirar nuestros descuentos👁👁
+                    <a class="link_descuentos icon-link text-decoration-none" href="#descuentazos">
+                        Haz click aquí para mirar nuestra sección de descuentos👁👁
                     </a>
                 </div>
             </div>
@@ -76,7 +76,7 @@
                                     <p class="card-text">Alhaja de diamantes para dama de Oro 18k. Peso: 4grs.</p>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="btn-group">
-                                                <button type="button" class="boton btn" data-product-id="1" data-product-name="Alhaja de diamantes" data-product-price="250000">Comprar</button>
+                                                <button type="button" class="boton btn" data-product-id="1" data-product-name="Alhaja de diamantes" data-product-price="250000">Añadir al carrito</button>
                                             </div>
                                             <small class="text-body-secondary">$250,000</small>
                                         </div>
@@ -90,7 +90,7 @@
                                     <p class="card-text">Cadena con dije de Oro 18k para dama. Largo: 40cm Peso: 7grs.</p>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="btn-group">
-                                                <button type="button" class="boton btn" data-product-id="2" data-product-name="Cadena con dije de Oro 18k para dama. Largo: 40cm Peso: 7grs." data-product-price="200000">Comprar</button>
+                                                <button type="button" class="boton btn" data-product-id="2" data-product-name="Cadena con dije de Oro 18k para dama. Largo: 40cm Peso: 7grs." data-product-price="200000">Añadir al carrito</button>
                                             </div>
                                             <small class="text-body-secondary">$200,000</small>
                                         </div>
@@ -104,7 +104,7 @@
                                     <p class="card-text">Anillo para compromiso de Oro blanco y zircon. Peso: 4grs.</p>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="btn-group">
-                                                <button type="button" class="boton btn" data-product-id="3" data-product-name="Anillo para compromiso de Oro blanco y zircon. Peso: 4grs." data-product-price="130000">Comprar</button>
+                                                <button type="button" class="boton btn" data-product-id="3" data-product-name="Anillo para compromiso de Oro blanco y zircon. Peso: 4grs." data-product-price="130000">Añadir al carrito</button>
                                             </div>
                                             <small class="text-body-secondary">$130,000</small>
                                         </div>
@@ -118,7 +118,7 @@
                                     <p class="card-text">Alianzas de Oro 18k, con franja de oro blanco.</p>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="btn-group">
-                                                <button type="button" class="boton btn" data-product-id="4" data-product-name="Alianzas de oro 18k, con franja de oro blanco" data-product-price="105000">Comprar</button>
+                                                <button type="button" class="boton btn" data-product-id="4" data-product-name="Alianzas de oro 18k, con franja de oro blanco" data-product-price="105000">Añadir al carrito</button>
                                             </div>
                                             <small class="text-body-secondary">$105,000</small>
                                         </div>
@@ -126,13 +126,13 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="productos card">
+                            <div class="productos card" id="pulsera">
                                 <img class="joyas" src="../assets/img/pulsera.jpeg" alt="Pulsera de Oro 18k. Peso: 6grs">
                                 <div class="card-body">
                                     <p class="card-text">Pulsera de Oro 18k. Peso: 6grs</p>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="btn-group">
-                                                <button type="button" class="boton btn" data-product-id="5" data-product-name="Pulsera de Oro 18k. Peso: 6grs." data-product-price="200000">Comprar</button>
+                                                <button type="button" class="boton btn" data-product-id="5" data-product-name="Pulsera de Oro 18k. Peso: 6grs." data-product-price="200000">Añadir al carrito</button>
                                             </div>
                                             <small class="text-body-secondary">$200,000</small>
                                         </div>
@@ -140,13 +140,13 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="productos card">
+                            <div class="productos card" id="aros">
                                 <img class="joyas" src="../assets/img/aros.jpeg" alt="Aritos de Oro 18k">
                                 <div class="card-body">
                                     <p class="card-text">Set de aritos de Oro 18k</p>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="btn-group">
-                                                <button type="button" class="boton btn" data-product-id="6" data-product-name="Set de aritos de Oro 18k." data-product-price="30000">Comprar</button>
+                                                <button type="button" class="boton btn" data-product-id="6" data-product-name="Set de aritos de Oro 18k." data-product-price="30000">Añadir al carrito</button>
                                             </div>
                                             <small class="text-body-secondary">$30,000</small>
                                         </div>
@@ -160,7 +160,7 @@
                                     <p class="card-text">Cadena de bordillo de Oro 18k para caballero. Largo: 50cm Peso: 20grs</p>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="btn-group">
-                                                <button type="button" class="boton btn" data-product-id="7" data-product-name="Cadena de bordillo de Oro 18k para caballero. Largo:50cm. Peso: 20grs" data-product-price="550000">Comprar</button>
+                                                <button type="button" class="boton btn" data-product-id="7" data-product-name="Cadena de bordillo de Oro 18k para caballero. Largo:50cm. Peso: 20grs" data-product-price="550000">Añadir al carrito</button>
                                             </div>
                                             <small class="text-body-secondary">$550,000</small>
                                         </div>
@@ -174,7 +174,7 @@
                                     <p class="card-text">Pulsera trenzada de Oro 18k para Caballero. Peso 10grs.</p>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="btn-group">
-                                                <button type="button" class="boton btn" data-product-id="8" data-product-name="Pulsera trenzada de Oro 18k para Caballero peso 10grs" data-product-price="300000">Comprar</button>
+                                                <button type="button" class="boton btn" data-product-id="8" data-product-name="Pulsera trenzada de Oro 18k para Caballero peso 10grs" data-product-price="300000">Añadir al carrito</button>
                                             </div>
                                             <small class="text-body-secondary">$300,000</small>
                                         </div>
@@ -188,7 +188,7 @@
                                     <p class="card-text">Cadena de Oro blanco y amarillo 18k unisex. Peso: 6grs.</p>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="btn-group">
-                                                <button type="button" class="boton btn" data-product-id="9" data-product-name="Cadena de Oro blanco y amarillo 18k unisex. Peso: 6grs." data-product-price="180000">Comprar</button>
+                                                <button type="button" class="boton btn" data-product-id="9" data-product-name="Cadena de Oro blanco y amarillo 18k unisex. Peso: 6grs." data-product-price="180000">Añadir al carrito</button>
                                             </div>
                                             <small class="text-body-secondary">$180,000</small>
                                         </div>
@@ -198,7 +198,152 @@
                     </div>
                 </div>
             </div>
-        </section>    
+        </section> 
+        <section class="header_des position-relative overflow-hidden p-3 p-md-5 text-center" id="descuentazos">
+            <div class="col-md-6 p-lg-3 mx-auto">
+                <h1 class="textos display-3 fw-bold">Descuentazos</h1>
+                <h3 class="textos fw-normal text-muted mb-3">Muchas de nuestras finas prendas por un bajo precio, <b>10% OFF, 15% OFF y 20% OFF.</b></h3>
+                <div class="d-flex gap-3 justify-content-center lead fw-normal">
+                    <a class="link_descuentos icon-link text-decoration-none" href="./catalogo.html">
+                    Haz click aquí para mirar nuestra sección principal👁👁
+                    </a>
+                </div>
+            </div>
+            <div class="product-device shadow-sm d-none d-md-block"></div>
+            <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+            <div class=" album py-5">
+                <div class= "container">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-5">
+                        <div class="col">
+                            <div class="sale card">
+                                <img class="joyas" src="../assets/img/imgdescuento/des1.jpg" alt="10% OFF. Aros de plata 925 gris y dorada.">
+                                <div class="card-body">
+                                    <p class="card-text"><b>10% OFF</b> Aros de plata 925 gris y dorada. Peso: 3grs </p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+                                                <button type="button" class="boton btn" data-product-id="10" data-product-name="10%OFF Aros de plata 925 gris y dorada. peso 3grs" data-product-price="15000">Añadir al carrito</button>
+                                            </div>
+                                            <small class="text-body-secondary">$15,000</small>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="sale card">
+                                <img class="joyas" src="../assets/img/imgdescuento/des2.jpg" alt="15% OFF. Aros de plata 925 con piedras de zircon.">
+                                <div class="card-body">
+                                    <p class="card-text"><b>15% OFF</b> Aros de plata 925 con piedras de zircon.</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+                                                <button type="button" class="boton btn"data-product-id="11" data-product-name="15%OFF Aros de plata 925 con piedras de zircon." data-product-price="20000">Añadir al carrito</button>
+                                            </div>
+                                            <small class="text-body-secondary">$20,000</small>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="sale card">
+                                <img class="joyas" src="../assets/img/imgdescuento/des3.jpg" alt="10% OFF Anillo de plata 925 modelo: ALCE.">
+                                <div class="card-body">
+                                    <p class="card-text"><b>10% OFF</b> Anillo de plata 925 modelo: ALCE. Peso: 3 grs</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+                                                <button type="button" class="boton btn"data-product-id="12" data-product-name="10%OFF Anillo de plata 925 modelo: ALCE. peso 3grs" data-product-price="12000">Añadir al carrito</button>
+                                            </div>
+                                            <small class="text-body-secondary">$12,000</small>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="sale card">
+                                <img class="joyas" class="joyas" src="../assets/img/imgdescuento/des4.jpg" alt="20% OFF Cadena de Oro 18k con dijes LOVE">
+                                <div class="card-body">
+                                    <p class="card-text"><b>20% OFF</b> Cadena de Oro 18k con dijes LOVE. Largo: 40cm</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+                                                <button type="button" class="boton btn"data-product-id="13" data-product-name="20%OFF Cadena de Oro 18k con dijes LOVE. Largo:40cm." data-product-price="180000">Añadir al carrito</button>
+                                            </div>
+                                            <small class="text-body-secondary">$180,000</small>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="sale card">
+                                <img class="joyas" src="../assets/img/imgdescuento/des5.jpg" alt="10% OFF Pulsera trenzada de Oro 18k para ">
+                                <div class="card-body">
+                                    <p class="card-text"><b>10% OFF</b> Alianzas de plata. Peso 4grs c/u.</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+                                                <button type="button" class="boton btn"data-product-id="14" data-product-name="10%OFF Alianzas de plata 925. peso 4grs" data-product-price="30000">Añadir al carrito</button>
+                                            </div>
+                                            <small class="text-body-secondary">$30,000</small>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="sale card">
+                                <img class="joyas" src="../assets/img/imgdescuento/des6.jpg" alt="15% OFF Set de cadena y anillo de Oro 18k con piedra de esmeralda">
+                                <div class="card-body">
+                                    <p class="card-text"><b>15% OFF</b> Set de cadena y anillo de Oro 18k con piedra de esmeralda. Peso: 5grs.</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+                                                <button type="button" class="boton btn"data-product-id="15" data-product-name="10%OFF Aros de plata 925 gris y dorada. peso 3grs" data-product-price="15000">Añadir al carrito</button>
+                                            </div>
+                                            <small class="text-body-secondary">$215,000</small>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col" id="sale">
+                            <div class="sale card">
+                                <img class="joyas" src="../assets/img/imgdescuento/des7.jpg" alt="15% OFF Set de anillos de plata 925 con piedras semi preciosas de zircon">
+                                <div class="card-body">
+                                    <p class="card-text"> <b>15% OFF</b> Set de anillos de plata 925 con piedras semi preciosas de zircon. Peso: 2grs c/u</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+                                                <button type="button" class="boton btn"data-product-id="16" data-product-name="15%OFF Set de anillos de plata 925 con piedras semi preciosas de zircon." data-product-price="40000">Añadir al carrito</button>
+                                            </div>
+                                            <small class="text-body-secondary">$40,000</small>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="sale card">
+                                <img class="joyas" src="../assets/img/imgdescuento/des8.jpg" alt="20% OFF Cadena de plata 925 y dije con brillantes">
+                                <div class="card-body">
+                                    <p class="card-text"><b>20% OFF</b> Cadena de plata 925 y dije con brillantes. Modelo marinero 50cm. Peso: 30grs</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+                                                <button type="button" class="boton btn"data-product-id="17" data-product-name="20%OFF Cadena de plata 925 y dije con brillantes. Modelo Marinero 50cm" data-product-price="80000">Añadir al carrito</button>
+                                            </div>
+                                            <small class="text-body-secondary">$80,000</small>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="sale card">
+                                <img class="joyas" src="../assets/img/imgdescuento/des9.jpg" alt="10% OFF Pulsera para dama de plata 925 con brillantes sintéticos rodinada">
+                                <div class="card-body">
+                                    <p class="card-text"><b>10% OFF</b> Pulsera para dama de plata 925 con brillantes sintéticos rodinada 15cm. Peso: 10 grs</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+                                                <button type="button" class="boton btn"data-product-id="18" data-product-name="10%OFF Pulsera para dama de plata 925 rodinada con brillantes." data-product-price="25000">Añadir al carrito</button>
+                                            </div>
+                                            <small class="text-body-secondary">$25,000</small>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>   
         <hr class="divider">
     </main>
     <footer class="piedepagina">
