@@ -22,16 +22,9 @@
     .atractivos{
         font-size: 18px;
     }
-    /*ubicanos*/
-    #fondodemapa{
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        gap: 10px;
-        grid-template-areas:
-            "direccion"
-            "mapa"
-            "contacto";
+    /*catalogo*/
+    .header_cat{
+        margin-top: 20px;
     }
     /*footer*/
     .piedepagina{
