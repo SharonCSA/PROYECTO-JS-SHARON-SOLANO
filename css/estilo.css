@@ -71,63 +71,64 @@ main {
     .piedepagina .icons:hover {
       color: #ffbb00; }
 
-main {
-  font-family: "Roboto Slab", serif; }
-  main .carrusel {
-    border-radius: 2%;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); }
-  main .margen {
-    margin: 20px; }
-  main .productos-seccion {
+main .carrusel {
+  margin-top: 140px;
+  border-radius: 2%;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); }
+
+main .margen {
+  margin: 20px; }
+
+main .productos-seccion {
+  display: flex;
+  max-width: 1400px;
+  margin: 0;
+  gap: 2rem;
+  padding: 25px; }
+  main .productos-seccion .productos-contenido {
+    flex: 1;
     display: flex;
-    max-width: 1400px;
-    margin: 0;
-    gap: 2rem;
-    padding: 25px; }
-    main .productos-seccion .productos-contenido {
-      flex: 1;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      text-align: center;
-      justify-content: center;
-      padding: 10px;
-      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
-      background-color: #fddeb8; }
-      main .productos-seccion .productos-contenido img {
-        max-width: 180px;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    background-color: #fddeb8; }
+    main .productos-seccion .productos-contenido img {
+      max-width: 180px;
+      width: 100%;
+      height: auto;
+      border: 2px solid white;
+      border-radius: 20%; }
+      main .productos-seccion .productos-contenido img:hover {
+        border: 3px solid #cfa169; }
+    main .productos-seccion .productos-contenido h4 {
+      margin: 10px;
+      width: 300px;
+      font-size: 18px; }
+
+main .contenedor {
+  margin: 10px; }
+  main .contenedor .intereses {
+    justify-content: center; }
+    main .contenedor .intereses .atractivos {
+      background-color: #fddeb8;
+      border-radius: 6px;
+      width: 550px;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); }
+      main .contenedor .intereses .atractivos img {
+        max-width: 300px;
         width: 100%;
-        height: auto;
-        border: 2px solid white;
-        border-radius: 20%; }
-        main .productos-seccion .productos-contenido img:hover {
-          border: 3px solid #cfa169; }
-      main .productos-seccion .productos-contenido h4 {
-        margin: 10px;
-        width: 300px;
-        font-size: 18px; }
-  main .contenedor {
-    margin: 10px; }
-    main .contenedor .intereses {
-      justify-content: center; }
-      main .contenedor .intereses .atractivos {
-        background-color: #fddeb8;
-        border-radius: 6px;
-        width: 550px;
-        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); }
-        main .contenedor .intereses .atractivos img {
-          max-width: 300px;
-          width: 100%;
-          border-radius: 10%; }
-        main .contenedor .intereses .atractivos a {
-          text-decoration: none;
-          color: #5a3201; }
-          main .contenedor .intereses .atractivos a p:hover {
-            color: #ffbb00; }
+        border-radius: 10%; }
+      main .contenedor .intereses .atractivos a {
+        text-decoration: none;
+        color: #5a3201; }
+        main .contenedor .intereses .atractivos a p:hover {
+          color: #ffbb00; }
 
 main .header_cat {
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
-  margin-top: 140px; }
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); }
   main .header_cat .textos {
     color: #5a3201; }
   main .header_cat .link_descuentos {
