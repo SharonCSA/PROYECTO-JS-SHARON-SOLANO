@@ -31,7 +31,7 @@ function createProductContainers(productos) {
     productContainer.className = 'col';
     productContainer.innerHTML = `
       <div class="${product.categoria} productos card">
-        <img class="joyas" src="./assets/img/${product.imagen}" alt="${product.nombre}">
+        <img class="joyas" src="/assets/img/${product.imagen}" alt="${product.nombre}">
         <div class="card-body">
           <p class="card-text">${product.nombre}</p>
           <div class="d-flex justify-content-between align-items-center">
@@ -50,20 +50,6 @@ function createProductContainers(productos) {
       catalogoContainer.appendChild(productContainer);
     } else if (product.categoria === 'descuento') {
       descuentosContainer.appendChild(productContainer);
-    }
-  });
-
-  // Agregar evento clic al botón "Añadir al carrito"
-  document.getElementById('catalogo-container').addEventListener('click', (event) => {
-    const targetButton = event.target.closest('.boton');
-    if (targetButton) {
-      const id = Number(targetButton.getAttribute('data-product-id'));
-      const nombre = targetButton.getAttribute('data-product-name');
-      const precio = Number(targetButton.getAttribute('data-product-price'));
-      agregarProductoAlCarrito(id, nombre, precio);
-
-      // Muestra una alerta indicando que se ha agregado al carrito
-      Swal.fire('Producto Agregado', `Has agregado ${nombre} al carrito por $${precio}.`, 'success');
     }
   });
 }
@@ -90,23 +76,71 @@ function agregarProductoAlCarrito(id, nombre, precio) {
   actualizarContadorCarrito();
 }
 
+// Agregar evento clic al botón "Añadir al carrito"
+document.getElementById('catalogo-container').addEventListener('click', (event) => {
+  const targetButton = event.target.closest('.boton');
+  if (targetButton) {
+    const id = Number(targetButton.getAttribute('data-product-id'));
+    const nombre = targetButton.getAttribute('data-product-name');
+    const precio = Number(targetButton.getAttribute('data-product-price'));
+    agregarProductoAlCarrito(id, nombre, precio);
+
+    // Muestra una alerta indicando que se ha agregado al carrito
+    Swal.fire('Producto Agregado', `Has agregado ${nombre} al carrito por $${precio}.`, 'success');
+  }
+});
+
+// Agregar evento clic al botón "Añadir al carrito"
+document.getElementById('descuentos-container').addEventListener('click', (event) => {
+  const targetButton = event.target.closest('.boton');
+  if (targetButton) {
+    const id = Number(targetButton.getAttribute('data-product-id'));
+    const nombre = targetButton.getAttribute('data-product-name');
+    const precio = Number(targetButton.getAttribute('data-product-price'));
+    agregarProductoAlCarrito(id, nombre, precio);
+
+    // Muestra una alerta indicando que se ha agregado al carrito
+    Swal.fire('Producto Agregado', `Has agregado ${nombre} al carrito por $${precio}.`, 'success');
+  }
+});
+
+
+// Función para eliminar un producto del carrito
+function eliminarProductoDelCarrito(index) {
+  const productoEliminado = carrito.productos.splice(index, 1)[0];
+  carrito.total -= productoEliminado.precio;
+
+  // Actualiza el carrito en local localStorage
+  localStorage.setItem('carrito', JSON.stringify(carrito));
+
+  // Actualiza el contador del carrito
+  actualizarContadorCarrito();
+}
+
 // Función para abrir el carrito en una ventana emergente
 function abrirCarrito() {
-  let carritoHTML = '<ul style="list-style-type: none; padding: 0;">';
+  let carritoHTML = '<ol style="list-style-type: none; padding: 0;">';
 
   carrito.productos.forEach((producto, index) => {
     carritoHTML += `<li>${producto.nombre} - $${producto.precio.toFixed(2)}`;
     carritoHTML += ` <button class="eliminar-producto" data-index="${index}" style="background-color: red; color: white;">🗑️</button></li>`;
   });
 
-  carritoHTML += `</ul><p style="font-size: 1.5em; color: black;">Total: $${carrito.total.toFixed(2)}</p>`;
+  carritoHTML += `</ol><p style="font-size: 1.5rem; color: black;">Total: $${carrito.total.toFixed(2)}</p>`;
+
+  const botonesHTML = `
+    <button id="realizar-compra-boton" class="boton">Realizar Compra</button>
+    <button id="vaciar-carrito-boton" class="boton">Vaciar Carrito</button>
+    <button id="volver-boton" class="boton">Volver</button>
+  `;
 
   Swal.fire({
     title: 'Carrito de Compras',
     html: carritoHTML,
-    showCancelButton: true,
-    showConfirmButton: false,  //
+    showCancelButton: false,
+    showConfirmButton: false,
     showCloseButton: true, // Mostramos el botón de cerrar
+    footer: botonesHTML, // Agregamos los botones en el pie de página
   });
 
   // Agregamos un evento clic a los botones de eliminar producto
@@ -117,18 +151,6 @@ function abrirCarrito() {
       eliminarProductoDelCarrito(index);
       abrirCarrito();  // Actualizamos la ventana del carrito
     });
-  });
-
-  // Agregar botones de realizar compra, vaciar carrito y volver
-  Swal.fire({
-    title: 'Mi Carrito',
-    showConfirmButton: false,
-    showCloseButton: true,
-    html: `
-      <button id="realizar-compra-boton" class="boton">Realizar Compra</button>
-      <button id="vaciar-carrito-boton" class="boton">Vaciar Carrito</button>
-      <button id="volver-boton" class="boton">Volver</button>
-    `
   });
 
   // Evento clic en el botón "Realizar Compra"
@@ -147,6 +169,7 @@ function abrirCarrito() {
   });
 }
 
+
 // Función para realizar la compra
 function realizarCompra() {
   // Mostrar ventana emergente con formulario de datos de pago
@@ -163,11 +186,11 @@ function realizarCompra() {
         <label for="tarjeta">Número de Tarjeta:</label>
         <input type="text" id="tarjeta" name="tarjeta" required><br>
 
-        <label for="vencimeinto">Vencimiento de la tarjeta:</label>
-        <input type="text" id="tarjeta" name="vencimiento" required><br>
+        <label for="vencimiento">Vencimiento de la tarjeta:</label>
+        <input type="text" id="vencimiento" name="vencimiento" required><br>
 
-        <label for="Codigo">Código de seguridad:</label>
-        <input type="text" id="tarjeta" name="codigo" required><br>
+        <label for="codigo">Código de seguridad:</label>
+        <input type="text" id="codigo" name="codigo" required><br>
 
         <label for="correo">Correo Electrónico:</label>
         <input type="email" id="correo" name="correo" required><br>
@@ -191,13 +214,13 @@ function realizarCompra() {
     const tarjeta = document.getElementById('tarjeta').value;
     const correo = document.getElementById('correo').value;
 
-    // Calcular el total con el costo de envío adicional
-    const totalConEnvio = carrito.total + 3000;
+    // Cerrar la ventana de datos de pago
+    Swal.close();
 
     // Mostrar alerta de compra realizada con éxito
     Swal.fire({
       title: 'Compra Realizada',
-      text: `¡Gracias por tu compra, ${nombre} ${apellido}!\nSe ha realizado con éxito.\nTotal: $${totalConEnvio.toFixed(2)}`,
+      text: `¡Gracias por tu compra, ${nombre} ${apellido}!\nSe ha realizado con éxito.\nTotal: $${carrito.total.toFixed(2)}`,
       icon: 'success',
       showCloseButton: true,
     });
@@ -209,11 +232,9 @@ function realizarCompra() {
     };
     localStorage.setItem('carrito', JSON.stringify(carrito));
     actualizarContadorCarrito();
-
-    // Cerrar la ventana de datos de pago
-    Swal.close();
   });
 }
+
 
 // Función para vaciar el carrito
 function vaciarCarrito() {
