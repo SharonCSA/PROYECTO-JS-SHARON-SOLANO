@@ -1,110 +1,128 @@
 [
     {
-      "id": 1,
-      "nombre": "Alhaja de diamantes",
-      "precio": 250000,
-      "imagen": "cat1.jpg"
+    "id": 1,
+    "nombre": "Alhaja de diamantes",
+    "precio": 250000,
+    "imagen": "cat1.jpg",
+    "categoria":"catalogo"
     },
     {
-      "id": 2,
-      "nombre": "Cadena con dije de Oro 18k",
-      "precio": 200000,
-      "imagen": "cat2.jpg"
+    "id": 2,
+    "nombre": "Cadena con dije de Oro 18k",
+    "precio": 200000,
+    "imagen": "cat2.jpg",
+    "categoria":"catalogo"
     },
     {
-      "id": 3,
-      "nombre": "Anillo para compromiso de Oro blanco y zircon",
-      "precio": 130000,
-      "imagen": "cat3.jpg"
+    "id": 3,
+    "nombre": "Anillo para compromiso de Oro blanco y zircon",
+    "precio": 130000,
+    "imagen": "cat3.jpg",
+    "categoria":"catalogo"
     },
     {
-      "id": 4,
-      "nombre": "Alianzas de Oro 18k, con franja de oro blanco",
-      "precio": 105000,
-      "imagen": "cat4.jpg"
+    "id": 4,
+    "nombre": "Alianzas de Oro 18k, con franja de oro blanco",
+    "precio": 105000,
+    "imagen": "cat4.jpg",
+    "categoria":"catalogo"
     },
     {
         "id": 5,
         "nombre": "Pulsera de Oro 18k.",
         "precio": 200000,
-        "imagen": "pulsera.jpg"
+        "imagen": "cat5.jpg",
+        "categoria":"catalogo"
     },
     {
         "id": 6,
         "nombre": "Set de aritos de Oro 18k",
         "precio": 30000,
-        "imagen": "aros.jpg"
+        "imagen": "cat6.jpg",
+        "categoria":"catalogo"
     },
     {
         "id": 7,
         "nombre": "Cadena de bordillo de Oro 18k",
         "precio": 550000,
-        "imagen": "cat7.jpg"
+        "imagen": "cat7.jpg",
+        "categoria":"catalogo"
     },
     {
         "id": 8,
         "nombre": "Pulsera trenzada de Oro 18k",
         "precio": 300000,
-        "imagen": "cat8.jpg"
+        "imagen": "cat8.jpg",
+        "categoria":"catalogo"
     },
     {
         "id": 9,
         "nombre": "Cadena de Oro blanco y amarillo 18k",
         "precio": 180000,
-        "imagen": "cat9.jpg"
+        "imagen": "cat9.jpg",
+        "categoria":"catalogo"
     },
     {
         "id": 10,
         "nombre": "Aros de plata 925 gris y dorada.",
         "precio": 15000,
-        "imagen": "des1.jpg"
+        "imagen": "des1.jpg",
+        "categoria":"descuento"
     },
     {
         "id": 11,
         "nombre": "Aros de plata 925 con piedras de zircon.",
         "precio": 20000,
-        "imagen": "des2.jpg"
+        "imagen": "des2.jpg",
+        "categoria":"descuento"
     },
     {
         "id": 12,
         "nombre": "Anillo de plata 925 modelo: ALCE.",
         "precio": 12000,
-        "imagen": "des3.jpg"
+        "imagen": "des3.jpg",
+        "categoria":"descuento"
     },  
     {
         "id": 13,
         "nombre": "Cadena de Oro 18k con dijes LOVE.",
         "precio": 180000,
-        "imagen": "des4.jpg"
+        "imagen": "des4.jpg",
+        "categoria":"descuento"
     },
     {
         "id": 14,
         "nombre": "Alianzas de plata.",
         "precio": 30000,
-        "imagen": "des5.jpg"
+        "imagen": "des5.jpg",
+        "categoria":"descuento"
     },
     {
         "id": 15,
         "nombre": "Set de cadena y anillo de Oro 18k con piedra de esmeralda.",
         "precio": 215000,
-        "imagen": "des6.jpg"
+        "imagen": "des6.jpg",
+        "categoria":"descuento"
     },
     {
         "id": 16,
         "nombre": "Set de anillos de plata 925 con piedras semi preciosas de zircon.",
         "precio": 40000,
-        "imagen": "des7.jpg"
+        "imagen": "des7.jpg",
+        "categoria":"descuento"
     },
     {
         "id": 17,
         "nombre": "Cadena de plata 925 y dije con brillantes. Modelo marinero",
         "precio": 80000,
-        "imagen": "des8.jpg"
+        "imagen": "des8.jpg",
+        "categoria":"descuento"
     },
     {
         "id": 18,
         "nombre": "Pulsera para dama de plata 925 con brillantes sintéticos rodinada",
         "precio": 25000,
-        "imagen": "des9.jpg"
+        "imagen": "des9.jpg",
+        "categoria":"descuento"
     }
-  ]
+]
