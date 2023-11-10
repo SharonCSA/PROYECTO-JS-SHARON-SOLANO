@@ -31,14 +31,14 @@
         "id": 5,
         "nombre": "Pulsera de Oro 18k.",
         "precio": 200000,
-        "imagen": "cat5.jpg",
+        "imagen": "cat5.jpeg",
         "categoria":"catalogo"
     },
     {
         "id": 6,
         "nombre": "Set de aritos de Oro 18k",
         "precio": 30000,
-        "imagen": "cat6.jpg",
+        "imagen": "cat6.jpeg",
         "categoria":"catalogo"
     },
     {
