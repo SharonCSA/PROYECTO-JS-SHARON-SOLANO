@@ -31,7 +31,7 @@ function createProductContainers(productos) {
     productContainer.className = 'col';
     productContainer.innerHTML = `
       <div class="${product.categoria} productos card">
-        <img class="joyas" src="/assets/img/${product.imagen}" alt="${product.nombre}">
+        <img class="joyas" src="./assets/img/${product.imagen}" alt="${product.nombre}">
         <div class="card-body">
           <p class="card-text">${product.nombre}</p>
           <div class="d-flex justify-content-between align-items-center">
